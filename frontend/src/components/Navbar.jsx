@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-yellow-700 backdrop-blur-md border-b border-gray-800 z-50">
+    <nav className="fixed top-0 left-0 w-full bg-yellow-700/30 backdrop-blur-md border-b border-gray-800 z-50">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2">
@@ -9,19 +9,19 @@ const Navbar = () => {
         </a>
 
         {/* Navigation links */}
-        <ul className="flex items-center gap-8 text-gray-300 text-sm font-medium">
+        <ul className="flex items-center gap-8 text-yellow-600 text-sm font-medium">
           <li>
             <a href="#about" className="hover:text-white transition-colors">
               About
             </a>
           </li>
           <li>
-            <a href="#testimonials" className="hover:text-white transition-colors">
+            <a href="#projects" className="hover:text-white transition-colors">
                 Projects
             </a>
           </li>
           <li>
-            <a href="#pricing" className="hover:text-white transition-colors">
+            <a href="#contact" className="hover:text-white transition-colors">
               Contact
             </a>
           </li>

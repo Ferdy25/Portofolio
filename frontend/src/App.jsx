@@ -14,6 +14,9 @@ function App() {
         <Project />
         <Contact />
       </main>
+      <div className="fixed bottom-4 right-4 text-gray-600 text-sm opacity-50 select-none z-50">
+        © 2026 Ferdy Adnan Hernando. All rights reserved.
+      </div>
     </div>
   );
 }
