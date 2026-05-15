@@ -1,6 +1,8 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Project from './components/Project';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
       <main className="pt-16">
         <Hero />
         <About />
+        <Project />
+        <Contact />
       </main>
     </div>
   );

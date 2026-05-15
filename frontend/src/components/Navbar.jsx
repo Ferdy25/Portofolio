@@ -1,9 +1,9 @@
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-yellow-700/30 backdrop-blur-md border-b border-gray-800 z-50">
+    <nav className="fixed top-0 left-0 w-full bg-yellow-700 backdrop-blur-md border-b border-gray-800 z-50">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a  className="flex items-center gap-2">
+        <a href="#hero" className="flex items-center gap-2">
             <img src="/logo kampus.png" alt="Logo" className="w-8 h-8 rounded-full object-cover" />
           <span className="text-white font-bold text-lg">Ferdy Adnan Hernando</span>
         </a>
