@@ -11,10 +11,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="bg-gray-950 min-h-screen text-white">
-        <Navbar />
         <Routes>
           <Route path="/" element={
             <>
+            <Navbar />
               <Hero />
               <About />
               <Project />
