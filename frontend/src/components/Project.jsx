@@ -1,5 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+
 const Project = () => {
   const scrollRef = useRef(null);
   const [projects, setProjects] = useState([]);
@@ -9,7 +11,7 @@ const Project = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/projects');
+        const res = await fetch(`${API_URL}/projects`);
         if (!res.ok) throw new Error('Gagal ambil data');
         const data = await res.json();
         setProjects(data);

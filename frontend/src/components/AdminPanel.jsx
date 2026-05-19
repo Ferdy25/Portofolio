@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+
 const AdminPanel = () => {
   const [projects, setProjects] = useState([]);
   const [form, setForm] = useState({ title: '', description: '', image: null });
@@ -17,7 +19,7 @@ const AdminPanel = () => {
   // Fetch projects
   const fetchProjects = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/projects');
+      const res = await fetch(`${API_URL}/projects`);
       const data = await res.json();
       setProjects(data);
     } catch (err) {
@@ -61,7 +63,7 @@ const AdminPanel = () => {
     if (form.image) formData.append('image', form.image);
 
     try {
-      const res = await fetch('http://localhost:3000/api/projects', {
+      const res = await fetch(`${API_URL}/projects`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: formData
@@ -88,7 +90,7 @@ const AdminPanel = () => {
     if (!window.confirm('Yakin hapus project ini?')) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/projects/${id}`, {
+      const res = await fetch(`${API_URL}/projects/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
