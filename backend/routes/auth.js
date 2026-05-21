@@ -3,7 +3,17 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const pool = require('../database');
+const rateLimit = require('express-rate-limit');
 require('dotenv').config();
+
+// Limit login/register attempts to 5 requests per 15 minutes per IP
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5, 
+  message: { error: 'Terlalu banyak percobaan, silakan coba lagi nanti.' },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
 // REGISTER
 router.post('/register', async (req, res) => {
@@ -24,7 +34,7 @@ router.post('/register', async (req, res) => {
       return res.status(400).json({ error: 'Username sudah terdaftar!' });
     }
     
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 12);
     
     await pool.query(
       'INSERT INTO users (username, password, role) VALUES (?, ?, ?)',
@@ -40,7 +50,7 @@ router.post('/register', async (req, res) => {
 });
 
 // LOGIN
-router.post('/login', async (req, res) => {
+router.post('/login', authLimiter, async (req, res) => {
   try {
     const { username, password } = req.body;
     

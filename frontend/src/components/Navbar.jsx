@@ -4,7 +4,7 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2">
-            <img src="/logo kampus.png" alt="Logo" className="w-8 h-8 rounded-full object-cover" />
+            <img src="/Me.jpeg" alt="Logo" className="w-8 h-8 rounded-full object-cover" />
           <span className="text-white font-bold text-lg">Ferdy Adnan Hernando</span>
         </a>
 
@@ -30,7 +30,7 @@ const Navbar = () => {
               href="#Github"
               className="px-4 py-2  bg-yellow-700  transition delay-150 duration-300  hover:bg-stone-400 rounded-full text-white transition-colors"
             >
-              Git Hub
+              Donation
             </a>
           </li>
         </ul>

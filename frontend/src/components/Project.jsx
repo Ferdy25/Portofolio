@@ -39,7 +39,7 @@ const Project = () => {
   // Loading
   if (loading) {
     return (
-      <section id="projects" className="py-20 bg-gray-950">
+      <section id="projects" className="py-100 bg-gray-950">
         <div className="text-center text-gray-400">
           <p>Loading projects...</p>
         </div>
@@ -48,7 +48,7 @@ const Project = () => {
   }
 
   return (
-    <section id="projects" className="py-20 bg-gray-950">
+    <section id="projects" className="py-100 bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center text-white mb-12">
           My Projects

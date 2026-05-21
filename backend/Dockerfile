@@ -2,16 +2,14 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-RUN npm install -g nodemon
+# Install dependencies for native modules (like bcrypt)
+RUN apk add --no-cache python3 make g++
 
 COPY package*.json ./
 RUN npm install
 
 COPY . .
 
-RUN mkdir -p uploads
-
 EXPOSE 3000
 
-# Jalanin seed dulu, BARU server
 CMD sh -c "node seed.js & sleep 15 && npm run dev"
